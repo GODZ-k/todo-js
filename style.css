@@ -23,7 +23,9 @@
     border-radius: 10px;
 }
 
-.inner-cont {}
+.inner-cont {
+    padding: 10px;
+}
 
 #parentList {
     list-style: none;
@@ -35,21 +37,36 @@
 }
 
 #parentList li::before {
-    height: 28px;
-    width: 28px;
+    height: 25px;
+    width: 25px;
     content: "";
     background-position: center;
     background-size: cover;
     position: absolute;
     border-radius: 50%;
     background-image: url(/todo\ list/unchecked.png);
-    top: 0px;
+    top: 6px;
     left: -34px;
 }
 
-.input {}
+.input {
+    padding: 5px 0;
+}
 
-.items {}
+#input,
+#btn {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#parentList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    padding: 10px 0;
+}
 
 .checked {
     text-decoration: line-through;

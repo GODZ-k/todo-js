@@ -4,9 +4,17 @@ let parentList = document.querySelector("#parentList")
 
 
 const getValue = () => {
+
+    if (parentList.children[0].classList == "empty") {
+        parentList.children[0].remove()
+    }
     console.log(input.value)
     let data = input.value
-    createElement(data)
+    if (data === "") {
+        alert("Please enter valid text")
+    } else {
+        createElement(data)
+    }
 }
 
 const createElement = (data) => {
@@ -38,12 +46,23 @@ const done = (e) => {
 
 const deleteItem = (e) => {
     e.parentElement.remove()
+
+    if (parentList.children.length <= 0) {
+        let info = document.createElement("p")
+        info.classList.add("empty")
+        info.textContent = "No data found"
+        parentList.appendChild(info)
+    }
+
     saveData()
 
 }
 
 btn.addEventListener("click", getValue)
 
+
+
+// local host
 
 function saveData() {
     localStorage.setItem("data", parentList.innerHTML)
