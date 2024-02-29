@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    height: 100vh;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container {
+    min-height: 40vh;
+    width: 30rem;
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.inner-cont {}
+
+#parentList {
+    list-style: none;
+}
+
+#parentList li {
+    position: relative;
+    cursor: pointer;
+}
+
+#parentList li::before {
+    height: 28px;
+    width: 28px;
+    content: "";
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    border-radius: 50%;
+    background-image: url(/todo\ list/unchecked.png);
+    top: 0px;
+    left: -34px;
+}
+
+.input {}
+
+.items {}
+
+.checked {
+    text-decoration: line-through;
+    color: #555;
+}
+
+#parentList li.checked::before {
+    background-image: url(/todo\ list/checked.png);
+}
